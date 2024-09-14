@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://www.xmos.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xmos.com http://www.xmos.com" ManuallySpecifiedRouting="false">
+  <Type>Device</Type>
+  <Name>XVF3510_DDC Device</Name>
+  <Declarations>
+    <Declaration>tileref tile[2]</Declaration>
+    <Declaration>tileref usb_tile</Declaration>
+  </Declarations>
+  <Packages>
+    <Package id="0" Type="XS2-UFnA-512-FB236">
+      <Nodes>
+        <Node Id="0" InPackageId="0" Type="XS2-L16A-512" Oscillator="24MHz" SystemFrequency="500MHz" OscillatorSrc="1" RoutingId="0">
+          <Boot>
+            <Source Location="bootFlash"/>
+          </Boot>
+          <Tile Number="0" Reference="tile[0]">
+            <Port Location="XS1_PORT_1B" Name="PORT_SQI_CS"/>
+            <Port Location="XS1_PORT_1C" Name="PORT_SQI_SCLK"/>
+            <Port Location="XS1_PORT_4B" Name="PORT_SQI_SIO"/>
+            <Port Location="XS1_PORT_1A" Name="PORT_PLL_REF"/>
+            <Port Location="XS1_PORT_1L" Name="PORT_MCLK_IN"/>
+            <Port Location="XS1_PORT_1E" Name="PORT_I2S_LRCLK"/>
+            <Port Location="XS1_PORT_1D" Name="PORT_I2S_BCLK"/>
+            <Port Location="XS1_PORT_1M" Name="PORT_I2S_DAC0"/>
+            <port Location="XS1_PORT_1N" Name="PORT_I2S_DAC1"/>
+            <Port Location="XS1_PORT_1O" Name="PORT_I2S_ADC0"/>
+            <Port Location="XS1_PORT_1P" Name="PORT_I2S_ADC1"/>
+          </Tile>
+          <Tile Number="1" Reference="tile[1]">
+            <Port Location="XS1_PORT_1H" Name="PORT_USB_TX_READYIN"/>
+            <Port Location="XS1_PORT_1J" Name="PORT_USB_CLK"/>
+            <Port Location="XS1_PORT_1K" Name="PORT_USB_TX_READYOUT"/>
+            <Port Location="XS1_PORT_1I" Name="PORT_USB_RX_READY"/>
+            <Port Location="XS1_PORT_1E" Name="PORT_USB_FLAG0"/>
+            <Port Location="XS1_PORT_1F" Name="PORT_USB_FLAG1"/>
+            <Port Location="XS1_PORT_1G" Name="PORT_USB_FLAG2"/>
+            <Port Location="XS1_PORT_8A" Name="PORT_USB_TXD"/>
+            <Port Location="XS1_PORT_8B" Name="PORT_USB_RXD"/>
+            <Port Location="XS1_PORT_1A" Name="PORT_MCLK_OUT"/>
+            <Port Location="XS1_PORT_16B" Name="PORT_MCLK_COUNT"/>
+            <Port Location="XS1_PORT_1C" Name="PORT_ADAT_OUT"/>
+            <Port Location="XS1_PORT_1D" Name="PORT_ADAT_IN"/>
+          </Tile>
+          <RoutingTable>
+            <Bits>
+              <Bit number="1" direction="0"/>
+            </Bits>
+            <Links>
+              <Link name="8" direction="0"/>
+            </Links>
+          </RoutingTable>
+        </Node>
+        <Node Id="1" InPackageId="1" Type="periph:XS1-SU" Reference="usb_tile" Oscillator="24MHz" RoutingId="2"/>
+      </Nodes>
+      <Links>
+        <Link Encoding="5wire">
+          <LinkEndpoint NodeId="0" Link="8" Delays="52clk,52clk"/>
+          <LinkEndpoint NodeId="1" Link="XL0" Delays="1clk,1clk"/>
+        </Link>
+      </Links>
+    </Package>
+  </Packages>
+  <ExternalDevices>
+    <Device NodeId="0" Tile="0" Class="SQIFlash" Name="bootFlash" Type="AT25SF161" PageSize="256" SectorSize="4096" NumPages="8192">
+      <Attribute Name="PORT_SQI_CS" Value="PORT_SQI_CS"/>
+      <Attribute Name="PORT_SQI_SCLK" Value="PORT_SQI_SCLK"/>
+      <Attribute Name="PORT_SQI_SIO" Value="PORT_SQI_SIO"/>
+    </Device>
+  </ExternalDevices>
+  <JTAGChain>
+    <JTAGDevice NodeId="0"/>
+  </JTAGChain>
+</Network>

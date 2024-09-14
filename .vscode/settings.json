@@ -1,6 +1,10 @@
 {
     "cmake.generator": "Unix Makefiles",
     "files.associations": {
-        "*.xc": "c"
+        "*.xc": "c",
+        "xua_conf.h": "c",
+        "xua_conf_full.h": "c",
+        "dsd_support.h": "c",
+        "audioports.h": "c"
     },
 }
