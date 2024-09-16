@@ -95,10 +95,10 @@
 
 /*** Defines relating to USB descriptor strings and ID's ***/
 #define VENDOR_ID          (0x20B1) /* XMOS VID */
-#define PID_AUDIO_2        (0x000E) /* XK-AUDIO-216-MC USB Audio Reference Design PID */
-#define PID_AUDIO_1        (0x000F) /* XK-AUDIO-216-MC USB Audio Reference Design PID */
-#define PRODUCT_STR_A2     "XMOS xCORE-200 MC (UAC2.0)"
-#define PRODUCT_STR_A1     "XMOS xCORE-200 MC (UAC1.0)"
+#define PID_AUDIO_2        (0x000E) 
+#define PID_AUDIO_1        (0x000F) 
+#define PRODUCT_STR_A2     "XVF3510 DDC ADAT/USB - I2S (UAC2.0)"
+#define PRODUCT_STR_A1     "XVF3510 DDC ADAT/USB - I2S (UAC1.0)"
 
 /* Board power source - Default is self-powered */
 #ifndef XUA_POWERMODE
