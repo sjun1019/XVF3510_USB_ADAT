@@ -5,6 +5,11 @@
         "xua_conf.h": "c",
         "xua_conf_full.h": "c",
         "dsd_support.h": "c",
-        "audioports.h": "c"
+        "audioports.h": "c",
+        "__locale": "c",
+        "functional": "c",
+        "*.s": "c",
+        "*.tcc": "c"
     },
+    "C_Cpp.dimInactiveRegions": false,
 }

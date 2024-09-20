@@ -149,14 +149,6 @@ on tile[XUD_TILE] : in port p_mclk_in_usb                   = PORT_MCLK_IN_USB;
 // 
 on tile[AUDIO_IO_TILE] : clock clk_audio_bclk               = CLKBLK_I2S_BIT;    /* Bit clock */
 
-#ifdef IAP
-/* I2C ports - in a struct for use with module_i2c_shared & module_i2c_simple/module_i2c_single_port */
-#ifdef PORT_I2C
-on tile [IAP_TILE] : struct r_i2c r_i2c = {PORT_I2C};
-#else
-on tile [IAP_TILE] : struct r_i2c r_i2c = {PORT_I2C_SCL, PORT_I2C_SDA};
-#endif
-#endif
 
 #if XUA_USB_EN
 /* Endpoint type tables for XUD */
@@ -565,19 +557,11 @@ int main()
             );
         }
         //:
-        #if (XUA_SPDIF_TX_EN) && (SPDIF_TX_TILE != AUDIO_IO_TILE)
+#if (XUA_SPDIF_TX_EN) && (SPDIF_TX_TILE != AUDIO_IO_TILE)
         on tile[SPDIF_TX_TILE]:
         {
             thread_speed();
             SpdifTxWrapper(c_spdif_tx);
-        }
-        #endif
-
-#if defined(IAP)
-        on tile[IAP_TILE]:
-        {
-            thread_speed();
-            iAP(c_iap, null, null, null);
         }
 #endif
 
