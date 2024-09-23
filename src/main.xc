@@ -105,7 +105,11 @@ on tile[AUDIO_IO_TILE] : buffered in port:32 p_i2s_adc[I2S_WIRES_ADC] =
 on tile[AUDIO_IO_TILE] : buffered out port:32 p_lrclk       = PORT_I2S_LRCLK;
 on tile[AUDIO_IO_TILE] : buffered out port:32 p_bclk        = PORT_I2S_BCLK;
 
-on tile[AUDIO_IO_TILE] :  in port p_mclk_in                 = PORT_MCLK_IN;
+#if(!ClockMaster)
+    on tile[AUDIO_IO_TILE] :  in port p_mclk_in                 = PORT_MCLK_IN;
+#else
+    on tile[AUDIO_IO_TILE] :  out port p_mclk_in                 = PORT_MCLK_IN;
+#endif
 
 #if XUA_USB_EN
 on tile[XUD_TILE] : in port p_for_mclk_count                = PORT_MCLK_COUNT;
@@ -344,6 +348,7 @@ void usb_audio_io(chanend ?c_aud_in,
 #endif
 
 
+
 /* Main for USB Audio Applications */
 int main()
 {
@@ -523,7 +528,6 @@ int main()
                 thread_speed();
                 XUA_Endpoint0( c_xud_out[0], c_xud_in[0], c_aud_ctl, c_mix_ctl, c_clk_ctl, c_EANativeTransport_ctrl, dfuInterface VENDOR_REQUESTS_PARAMS_);
             }
-
 #endif /* XUA_USB_EN */
         }
 
