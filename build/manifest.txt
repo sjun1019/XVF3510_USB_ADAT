@@ -1,6 +1,6 @@
 Name                    | Location                                        | Branch/tag             | Changeset
 ------------------------+-------------------------------------------------+------------------------+--------------------------------------------
-XVF3510_USB_ADAT          https://github.com/sjun1019/XVF3510_USB_ADAT.git  master                   72b74f29532b31a5b9e2658b840b488ab9a4b3bf
+XVF3510_USB_ADAT          https://github.com/sjun1019/XVF3510_USB_ADAT.git  master                   ef8edaeba33621ef57586a387be5735fedf14815
 lib_adat                  https://github.com/xmos/lib_adat                  v1.2.0                   8d046fba7550e90a062784ba6dae9a9e62fa1f68
 lib_locks                 https://github.com/xmos/lib_locks                 v2.2.0                   8bcca2852daeb1ccfb1c763d4b3d4f75c326ee2a
 lib_logging               https://github.com/xmos/lib_logging               v3.2.0                   10e63fdbe81c473b41abf2ec4c159fa502d05b46

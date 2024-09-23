@@ -97,12 +97,14 @@
 #define VENDOR_ID          (0x20B1) /* XMOS VID */
 #define PID_AUDIO_2        (0x000E) 
 #define PID_AUDIO_1        (0x000F) 
-#define PRODUCT_STR_A2     "XVF3510 DDC ADAT/USB - I2S (UAC2.0)"
-#define PRODUCT_STR_A1     "XVF3510 DDC ADAT/USB - I2S (UAC1.0)"
+#define PRODUCT_STR_A2     "XVF3510 DDC ADAT/USB - I2S"
+#define PRODUCT_STR_A1     "XVF3510 DDC ADAT/USB - I2S"
 
 /* Board power source - Default is self-powered */
 #ifndef XUA_POWERMODE
 #define XUA_POWERMODE      XUA_POWERMODE_SELF
 #endif
+
+#define ClockMaster         (0)
 
 #endif

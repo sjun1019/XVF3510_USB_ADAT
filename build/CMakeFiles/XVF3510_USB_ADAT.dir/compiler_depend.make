@@ -1828,7 +1828,8 @@ CMakeFiles/XVF3510_USB_ADAT.dir/Users/lsj/XMOS_XTC_15.3.0/lib_xud/lib_xud/src/co
   /Users/lsj/XMOS_XTC_15.3.0/lib_xud/lib_xud/src/core/XUD_USBTile_Support.h \
   /Users/lsj/XMOS_XTC_15.3.0/lib_xud/lib_xud/src/core/xs1_to_glx.h \
   /Users/lsj/XMOS_XTC_15.3.0/target/include/xs2_su_registers.h \
-  /Users/lsj/XMOS_XTC_15.3.0/lib_xud/lib_xud/src/core/XUD_TimingDefines.h
+  /Users/lsj/XMOS_XTC_15.3.0/lib_xud/lib_xud/src/core/XUD_TimingDefines.h \
+  /Users/lsj/XMOS_XTC_15.3.0/lib_xua/lib_xua/src/core/support/xc_ptr.h
 
 CMakeFiles/XVF3510_USB_ADAT.dir/Users/lsj/XMOS_XTC_15.3.0/lib_xud/lib_xud/src/core/XUD_SetCrcTableAddr.c.obj: /Users/lsj/XMOS_XTC_15.3.0/lib_xud/lib_xud/src/core/XUD_SetCrcTableAddr.c \
   /Users/lsj/XMOS_XTC_15.3.0/target/include/string.h \
